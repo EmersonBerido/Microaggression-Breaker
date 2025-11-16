@@ -1,0 +1,38 @@
+[
+  {
+    "theme": "Gender Identity",
+    "scenario": "Your coworker says, 'I just don’t get why someone would use they/them pronouns.'",
+    "choices": [
+      "Say nothing — it’s not your place.",
+      "Explain that gender identity is personal and pronouns reflect that.",
+      "Laugh and change the subject.",
+      "Tell them they’re being dramatic."
+    ],
+    "correct": [1],
+    "explanation": "Respectfully explaining helps normalize inclusive language and supports marginalized identities."
+  },
+  {
+    "theme": "Disability & Access",
+    "scenario": "A friend says, 'He doesn’t look disabled — why does he get special parking?'",
+    "choices": [
+      "Say, 'Yeah, it’s probably fake.'",
+      "Remind them that not all disabilities are visible.",
+      "Ignore it — not your business.",
+      "Make a joke to lighten the mood."
+    ],
+    "correct": [1],
+    "explanation": "Challenging assumptions about invisible disabilities helps reduce stigma and promotes empathy."
+  },
+  {
+    "theme": "Race & Microaggressions",
+    "scenario": "Someone says to your Asian American friend, 'Where are you really from?'",
+    "choices": [
+      "Say, 'They’re just curious, don’t worry about it.'",
+      "Interrupt and say, 'That question can be hurtful — they’re from here.'",
+      "Stay silent — it’s awkward.",
+      "Laugh and change the subject."
+    ],
+    "correct": [1],
+    "explanation": "Speaking up helps interrupt microaggressions and affirms your friend’s belonging."
+  }
+]

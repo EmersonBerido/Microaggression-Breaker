@@ -2,9 +2,10 @@
 * Loads a level one at a time
 * Get the levels from JSON
 */
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import {useNavigate} from "react-router-dom";
-import levels from "../assets/levels.json"
+import levels from "../assets/levels.json";
+import Options from "../Components/choices.tsx";
 
 
 
@@ -14,47 +15,21 @@ function Game() {
   
   const navigate = useNavigate();
 
-  const level = levels[index];
-  const correct = (idx : number) => {
-    // If answer is correct
-    if (level.correct.includes(idx)) {
-      setScore(prev => prev + 1);
-      console.log("Correct answer selected");
-    } else {
-      console.log("Incorrect answer selected");
-    }
-
-    // Update Health & Points
-
-    // Load next question
-    if (index + 1 >= levels.length) {
-      console.log("No more levels");
+  //Checks if current level is over limit 
+  useEffect(() => {
+    if (index >= levels.length) {
       navigate("/outcome", { state : { score : score}});
     }
-    else {
-      setIndex(prev => prev + 1);
-
-    }
-  }
-
-  const choices = level.choices.map((choice, idx) => {
-    return (
-      <button
-        onClick={() => correct(idx)}
-        key={`level${index}choice${idx}`}
-      >
-        {choice}
-      </button>
-    )
-  })
-  console.log(level);
+  }, [index])
+  
+  const level = levels[index];
 
   return (
     <main>
       <h1>Game</h1>
-      <p>{level.scenario}</p>
+      <p>{level ? level.scenario : "No level"}</p>
       <section>
-        {choices}
+        <Options totalLevels={levels.length} level={level} index={index} setIndex ={setIndex} score={score} setScore={setScore}/>
       </section>
     </main>
   )

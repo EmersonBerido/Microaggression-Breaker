@@ -1,4 +1,7 @@
 import { useState } from "react";
+import Explanation from "./explanation";
+
+// ADD EXPLANATION NEXT
 
 function Choices(props : any) {
   // Props contain: 
@@ -60,12 +63,15 @@ function Choices(props : any) {
     <section>
       {options}
       {selected != null &&
-        <button 
-          onClick={() => reset()}
-          className="px-4 py-2 m-2 border rounded transition bg-white hover:bg-blue-500"
-        >
-          Next Question
-        </button>
+        <>
+          <Explanation text={props.level.explanation} />
+          <button 
+            onClick={() => reset()}
+            className="px-4 py-2 m-2 border rounded transition bg-white hover:bg-blue-500"
+          >
+            Next Question
+          </button>
+        </>
       }
       
     </section>
